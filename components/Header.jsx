@@ -1,13 +1,13 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import Feather from 'react-native-vector-icons/Feather'
-const HeaderCard = () => {
+const HeaderCard = ({ name }) => {
   return (
     <View style={styles.header}>
       <View style={styles.test}>
         <Feather name="zap" size={30} color={'#2E82DB'} />
       </View>
-      <Text style={styles.textHeader}> Cards </Text>
+      <Text style={styles.textHeader}> {name} </Text>
     </View>
   )
 }
