@@ -1,23 +1,39 @@
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, View } from 'react-native'
-import HeaderCard from './components/Header.jsx'
-import Decks from './screens/Decks.jsx'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { SafeAreaView, Text, View, StyleSheet } from 'react-native'
+import { DeckScreen } from './screens/Decks.jsx'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { NavigationContainer } from '@react-navigation/native'
 
-export default function App() {
+const Stack = createNativeStackNavigator()
+
+const CardScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" />
-      <HeaderCard name={'Decks'} />
-      <Decks />
+    <SafeAreaView>
+      <View>
+        <Text>Cards</Text>
+      </View>
     </SafeAreaView>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#0D243D',
-    justifyContent: 'flex-start'
-  }
-})
+const MyStack = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Deck"
+          component={DeckScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Card"
+          component={CardScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
+
+export default function App() {
+  return <MyStack />
+}

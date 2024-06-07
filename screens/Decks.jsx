@@ -1,6 +1,7 @@
 import React from 'react'
-import { FlatList, StyleSheet, View } from 'react-native'
+import { FlatList, StyleSheet, View, SafeAreaView, StatusBar } from 'react-native'
 import Deck from '../components/Deck'
+import { HeaderCard } from '../components/Header.jsx'
 
 const listDecks = [
   {
@@ -20,7 +21,7 @@ const listDecks = [
   }
 ]
 
-export default function Decks() {
+function Decks() {
   return (
     <View style={styles.container}>
       <FlatList
@@ -34,10 +35,27 @@ export default function Decks() {
   )
 }
 
+export const DeckScreen = ({ navigation }) => {
+  return (
+    <SafeAreaView style={styles.containerDeckScreen}>
+      <StatusBar style="auto" />
+      <HeaderCard name={'Decks'} />
+      <Decks />
+    </SafeAreaView>
+  )
+}
+
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     marginTop: 20,
     gap: 20
+  },
+
+  containerDeckScreen: {
+    flex: 1,
+    backgroundColor: '#0D243D',
+    justifyContent: 'flex-start'
   }
 })
+

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import Feather from 'react-native-vector-icons/Feather'
-const HeaderCard = ({ name }) => {
+
+export const HeaderCard = ({ name }) => {
   return (
     <View style={styles.header}>
       <View style={styles.test}>
@@ -16,8 +17,7 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'baseline',
     justifyContent: 'center',
-    flexDirection: 'row',
-    marginTop: 60
+    flexDirection: 'row'
   },
   textHeader: {
     fontSize: 32,
