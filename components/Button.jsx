@@ -17,7 +17,21 @@ const IconButton = ({ icon }) => {
   )
 }
 
-export { TextButton, IconButton }
+const AnswerButton = ({ answer, showAnswer }) => {
+  return (
+    <TouchableOpacity>
+      <Text> Resposta Correta</Text>
+      <Feather
+        name={showAnswer ? 'arrow-up' : 'arrow-down'}
+        size={20}
+        color={'#000000'}
+      />
+      {showAnswer && <Text>{answer}</Text>}
+    </TouchableOpacity>
+  )
+}
+
+export { TextButton, IconButton, AnswerButton }
 
 const styles = StyleSheet.create({
   button: {
@@ -29,5 +43,12 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#2E82DB',
     padding: 10
+  },
+  answerCard: {
+    backgroundColor: '#fff'
+  },
+  answerText: {
+    color: '#000000',
+    fontWeight: 'regular'
   }
 })
