@@ -3,10 +3,12 @@ import { Card } from '../components/Card'
 
 const cardsList = [
   {
+    id: 1,
     question: 'Qual a biblioteca do python é usada?',
     answer: 'Pandas, numpy e MatplotLib'
   },
   {
+    id: 2,
     question: "Quais são os V's em Big Data?",
     answer: 'Volume, Velocidade, Variedade, Veracidade e Valor'
   }
