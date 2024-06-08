@@ -1,9 +1,12 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
-export default function Deck({ deckTitle, quantityCards }) {
+export default function Deck({ deckTitle, quantityCards, navigation }) {
   return (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => navigation.navigate('Card')}
+    >
       <Text style={styles.titleCard}>{deckTitle}</Text>
       <View style={{ flexDirection: 'row' }}>
         <Text style={styles.quantityText}>quant. de cards: </Text>

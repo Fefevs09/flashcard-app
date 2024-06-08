@@ -1,5 +1,11 @@
 import React from 'react'
-import { FlatList, StyleSheet, View, SafeAreaView, StatusBar } from 'react-native'
+import {
+  FlatList,
+  StyleSheet,
+  View,
+  SafeAreaView,
+  StatusBar
+} from 'react-native'
 import Deck from '../components/Deck'
 import { HeaderCard } from '../components/Header.jsx'
 
@@ -21,13 +27,17 @@ const listDecks = [
   }
 ]
 
-function Decks() {
+function Decks({ navigation }) {
   return (
     <View style={styles.container}>
       <FlatList
         data={listDecks}
         renderItem={({ item }) => (
-          <Deck deckTitle={item.title} quantityCards={item.quantityCards} />
+          <Deck
+            deckTitle={item.title}
+            quantityCards={item.quantityCards}
+            navigation={navigation}
+          />
         )}
         keyExtractor={item => item.id}
       />
@@ -40,7 +50,7 @@ export const DeckScreen = ({ navigation }) => {
     <SafeAreaView style={styles.containerDeckScreen}>
       <StatusBar style="auto" />
       <HeaderCard name={'Decks'} />
-      <Decks />
+      <Decks navigation={navigation} />
     </SafeAreaView>
   )
 }
@@ -58,4 +68,3 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start'
   }
 })
-
