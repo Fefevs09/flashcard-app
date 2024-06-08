@@ -1,10 +1,13 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import Feather from 'react-native-vector-icons/Feather'
 
-const TextButton = ({ title }) => {
+const TextButton = ({ title, navigation }) => {
   return (
-    <TouchableOpacity style={styles.button}>
-      <Text style={styles.button}>{title}</Text>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => navigation.navigate('Review')}
+    >
+      <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
   )
 }
@@ -38,11 +41,15 @@ const styles = StyleSheet.create({
     height: 50,
     width: 200,
     backgroundColor: '#fff',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    borderRadius: 12,
+    marginTop: 15
   },
   buttonText: {
     color: '#2E82DB',
-    padding: 10
+    fontWeight: 'bold'
   },
   answerCard: {
     backgroundColor: '#fff'
