@@ -8,30 +8,13 @@ import {
 } from 'react-native'
 import Deck from '../components/Deck'
 import { HeaderCard } from '../components/Header.jsx'
-
-const listDecks = [
-  {
-    id: 0,
-    title: 'Ciência de Dados',
-    quantityCards: 6
-  },
-  {
-    id: 1,
-    title: 'Português',
-    quantityCards: 12
-  },
-  {
-    id: 2,
-    title: 'Direito Adm.',
-    quantityCards: 20
-  }
-]
+import { ListDecks } from '../model/ListDeck.js'
 
 function Decks({ navigation }) {
   return (
     <View style={styles.container}>
       <FlatList
-        data={listDecks}
+        data={ListDecks}
         renderItem={({ item }) => (
           <Deck
             deckTitle={item.title}
