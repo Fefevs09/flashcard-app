@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Feather from 'react-native-vector-icons/Feather'
 
 const TextButton = ({ title, navigation }) => {
@@ -20,16 +20,18 @@ const IconButton = ({ icon }) => {
   )
 }
 
-const AnswerButton = ({ answer, showAnswer }) => {
+const AnswerButton = ({ answer, showAnswer, onPress }) => {
   return (
-    <TouchableOpacity>
-      <Text> Resposta Correta</Text>
-      <Feather
-        name={showAnswer ? 'arrow-up' : 'arrow-down'}
-        size={20}
-        color={'#000000'}
-      />
-      {showAnswer && <Text>{answer}</Text>}
+    <TouchableOpacity style={styles.answerCard} onPress={onPress}>
+      <View style={{ flexDirection: 'row' }}>
+        <Text> Resposta Correta</Text>
+        <Feather
+          name={showAnswer ? 'chevron-up' : 'chevron-down'}
+          size={20}
+          color={'#000000'}
+        />
+      </View>
+      {showAnswer && <Text style={styles.answerText}>{answer}</Text>}
     </TouchableOpacity>
   )
 }
@@ -52,10 +54,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   answerCard: {
-    backgroundColor: '#fff'
+    marginVertical: 10,
+    backgroundColor: '#fff',
+    gap: 5,
+    alignItems: 'center',
+    alignContent: 'center'
   },
   answerText: {
     color: '#000000',
-    fontWeight: 'regular'
+    fontWeight: 'regular',
+    marginTop: 20,
+    fontWeight: 'bold'
   }
 })

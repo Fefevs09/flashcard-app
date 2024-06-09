@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
+import { AnswerButton } from './Button'
 
 const Question = ({ questionTitle }) => {
   return (
@@ -8,19 +9,40 @@ const Question = ({ questionTitle }) => {
   )
 }
 
-export const ReviewCard = ({ questionTitle, answer }) => {
+export const ReviewCard = ({ questionTitle, answer, showAnswer, onPress }) => {
   return (
     <View style={styles.reviewCard}>
       <Question questionTitle={questionTitle} />
-      {/* Button to show answer */}
+      <AnswerButton answer={answer} showAnswer={showAnswer} onPress={onPress} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  reviewCard: {},
+  reviewCard: {
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    marginVertical: 15,
+    marginHorizontal: 25,
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    alignItems: 'center',
+    alignSelf: 'center',
+    height: 340,
+    width: 320
+  },
   questionBox: {
     borderRadius: 12,
-    borderColor: 'black'
+    borderWidth: 0.5,
+    borderColor: 'rgba(0, 0, 0, 0.16)',
+    height: 50,
+    width: 250,
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    flexWrap: 'wrap'
+  },
+  questionTitle: {
+    fontWeight: 'bold'
   }
 })
