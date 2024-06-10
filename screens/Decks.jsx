@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   FlatList,
   StyleSheet,
@@ -9,12 +9,13 @@ import {
 import Deck from '../components/Deck'
 import { HeaderCard } from '../components/Header.jsx'
 import { ListDecks } from '../model/ListDeck.js'
+import { IconButton } from '../components/Button.jsx'
 
-function Decks({ navigation }) {
+function Decks({ navigation, decks }) {
   return (
     <View style={styles.container}>
       <FlatList
-        data={ListDecks}
+        data={decks}
         renderItem={({ item }) => (
           <Deck
             deckTitle={item.title}
@@ -22,18 +23,28 @@ function Decks({ navigation }) {
             navigation={navigation}
           />
         )}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id.toString()}
       />
     </View>
   )
 }
 
 export const DeckScreen = ({ navigation }) => {
+  const [decks, setDecks] = useState(ListDecks)
+
+  function addDeck(newDeck) {
+    setDecks(prevDecks => [...prevDecks, newDeck])
+  }
   return (
     <SafeAreaView style={styles.containerDeckScreen}>
       <StatusBar style="auto" />
       <HeaderCard name={'Decks'} />
-      <Decks navigation={navigation} />
+      <Decks navigation={navigation} decks={decks} />
+      <IconButton
+        icon={'plus'}
+        size={30}
+        onPress={() => navigation.navigate('Modal', { addDeck })}
+      />
     </SafeAreaView>
   )
 }

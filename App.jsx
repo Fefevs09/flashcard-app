@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { CardScreen } from './screens/Cards.jsx'
 import { ReviewScreen } from './screens/Review.jsx'
+import { ModalScreen } from './screens/Modal.jsx'
 
 const Stack = createNativeStackNavigator()
 
@@ -38,6 +39,17 @@ const MyStack = () => {
             headerTintColor: '#fff'
           }}
         />
+
+        <Stack.Group screenOptions={{ presentation: 'modal' }}>
+          <Stack.Screen
+            name="Modal"
+            component={ModalScreen}
+            options={{
+              presentation: 'transparentModal',
+              headerShown: false
+            }}
+          />
+        </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
   )

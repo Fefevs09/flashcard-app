@@ -9,10 +9,10 @@ const TextButton = ({ title, onPress }) => {
   )
 }
 
-const IconButton = ({ icon }) => {
+const IconButton = ({ icon, onPress, size = 20 }) => {
   return (
-    <TouchableOpacity style={styles.button}>
-      <Feather name={icon} size={20} color={'#2E82DB'} />
+    <TouchableOpacity style={styles.button} onPress={onPress}>
+      <Feather name={icon} size={size} color={'#2E82DB'} />
     </TouchableOpacity>
   )
 }
