@@ -4,11 +4,15 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  TextInput
+  SafeAreaView,
+  TextInput,
+  KeyboardAvoidingView,
+  Platform
 } from 'react-native'
 import { ListDecks } from '../model/ListDeck'
 import { Decks } from '../model/Deck'
 import { useState } from 'react'
+import { ExitModalButton } from '../components/Button'
 
 const ModalButton = ({ onPress }) => {
   return (
@@ -46,19 +50,28 @@ export const ModalScreen = ({ navigation, route }) => {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.card}>
-        {/* <Button onPress={() => navigation.goBack()} title="Dismiss" /> */}
-        <Text style={styles.title}>Novo Decks</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={setText}
-          placeholder="Nome do Deck"
-          value={text}
+    <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={styles.container}
+      >
+        <ExitModalButton
+          onPress={() => navigation.goBack()}
+          style={styles.exitButton}
         />
-        <ModalButton onPress={onChangeText} />
-      </View>
-    </View>
+        <View style={styles.card}>
+          {/* <Button onPress={() => navigation.goBack()} title="Dismiss" /> */}
+          <Text style={styles.title}>Novo Decks</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={setText}
+            placeholder="Nome do Deck"
+            value={text}
+          />
+          <ModalButton onPress={onChangeText} />
+        </View>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   )
 }
 
