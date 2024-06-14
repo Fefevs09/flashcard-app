@@ -49,7 +49,7 @@ export const DeckScreen = ({ navigation }) => {
       <IconButton
         icon={'plus'}
         size={30}
-        onPress={() => navigation.navigate('Modal', { addDeck })}
+        onPress={() => navigation.navigate('Modal', { addDeck, decks })}
       />
     </SafeAreaView>
   )

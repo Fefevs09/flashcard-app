@@ -31,20 +31,22 @@ const ModalButton = ({ onPress }) => {
 
 export const ModalScreen = ({ navigation, route }) => {
   const [text, setText] = useState('')
-  const { addDeck } = route.params
+  const { addDeck, decks } = route.params
 
   function onChangeText() {
     if (text === '') {
+      // TODO: set notification to warning user to fill in tile deck field
       navigation.goBack()
       return
     }
 
-    const lastDeck = ListDecks.length ? ListDecks[ListDecks.length - 1] : null
+    const lastDeck = decks.length ? decks[decks.length - 1] : null
     const id = lastDeck ? lastDeck.id + 1 : 1 // Start with ID 1 if no decks exist
-    let title = text
-    let quantCard = 0
+    let titleDeck = text
+    // let quantCard = 0
+    let cards = []
 
-    const newDeck = { id, title, quantCard }
+    const newDeck = { id, titleDeck, cards }
     // ListDecks.push(newDeck)
     addDeck(newDeck)
     navigation.goBack()
