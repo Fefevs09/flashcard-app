@@ -4,6 +4,11 @@ import { NavigationContainer } from '@react-navigation/native'
 import { CardScreen } from './screens/Cards.jsx'
 import { ReviewScreen } from './screens/Review.jsx'
 import { ModalScreen } from './screens/Modal.jsx'
+import { LogBox } from 'react-native'
+
+LogBox.ignoreLogs([
+  'Non-serializable values were found in the navigation state'
+])
 
 const Stack = createNativeStackNavigator()
 

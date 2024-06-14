@@ -1,6 +1,5 @@
 import {
   View,
-  Button,
   Text,
   StyleSheet,
   TouchableOpacity,
@@ -10,7 +9,6 @@ import {
   Platform
 } from 'react-native'
 import { ListDecks } from '../model/ListDeck'
-import { Decks } from '../model/Deck'
 import { useState } from 'react'
 import { ExitModalButton } from '../components/Button'
 
@@ -36,7 +34,10 @@ export const ModalScreen = ({ navigation, route }) => {
   const { addDeck } = route.params
 
   function onChangeText() {
-    if (text == '') return
+    if (text === '') {
+      navigation.goBack()
+      return
+    }
 
     const lastDeck = ListDecks.length ? ListDecks[ListDecks.length - 1] : null
     const id = lastDeck ? lastDeck.id + 1 : 1 // Start with ID 1 if no decks exist
@@ -60,7 +61,6 @@ export const ModalScreen = ({ navigation, route }) => {
           style={styles.exitButton}
         />
         <View style={styles.card}>
-          {/* <Button onPress={() => navigation.goBack()} title="Dismiss" /> */}
           <Text style={styles.title}>Novo Decks</Text>
           <TextInput
             style={styles.input}
