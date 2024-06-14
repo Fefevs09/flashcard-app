@@ -24,13 +24,19 @@ const MyStack = () => {
         <Stack.Screen
           name="Card"
           component={CardScreen}
-          options={{
-            title: 'Ciência de Dados',
+          // options={{
+          //   headerStyle: { backgroundColor: '#0D243D' },
+          //   headerTitleStyle: { fontWeight: 'bold', fontSize: 24 },
+          //   headerBackTitleVisible: false,
+          //   headerTintColor: '#fff'
+          // }}
+          options={({ route }) => ({
+            title: route.params.title,
             headerStyle: { backgroundColor: '#0D243D' },
             headerTitleStyle: { fontWeight: 'bold', fontSize: 24 },
             headerBackTitleVisible: false,
             headerTintColor: '#fff'
-          }}
+          })}
         />
 
         <Stack.Screen

@@ -3,11 +3,13 @@ import { Card } from '../components/Card'
 import { TextButton } from '../components/Button'
 import { ListCard } from '../model/ListCard'
 
-export const CardScreen = ({ navigation }) => {
+export const CardScreen = ({ navigation, route }) => {
+  const { cards, title } = route.params
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={ListCard}
+        data={cards}
         renderItem={({ item }) => <Card title={item.question} />}
         keyExtractor={item => item.id}
       />

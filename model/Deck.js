@@ -1,4 +1,4 @@
-export const Decks = [
+export const ModelDecks = [
   {
     id: 0,
     titleDeck: 'Ciência de Dados',
@@ -35,6 +35,28 @@ export const Decks = [
         question: 'Quais são os componentes principais da Ciência de Dados?',
         answer:
           'Coleta de Dados, Processamentos de Dados, Análise de Dados, Visualização de Dados, Tomada de Decisões'
+      }
+    ]
+  },
+  {
+    id: 1,
+    titleDeck: 'Portugues',
+    cards: [
+      {
+        id: 0,
+        question: 'Quando usar crase',
+        answer: 'Quando for a + a'
+      }
+    ]
+  },
+  {
+    id: 2,
+    titleDeck: 'Direito Adm.',
+    cards: [
+      {
+        id: 0,
+        question: 'O que é o direito administrativo',
+        answer: 'É o direito da administração'
       }
     ]
   }

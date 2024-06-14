@@ -10,6 +10,7 @@ import Deck from '../components/Deck'
 import { HeaderCard } from '../components/Header.jsx'
 import { ListDecks } from '../model/ListDeck.js'
 import { IconButton } from '../components/Button.jsx'
+import { ModelDecks } from '../model/Deck.js'
 
 function Decks({ navigation, decks }) {
   return (
@@ -18,9 +19,14 @@ function Decks({ navigation, decks }) {
         data={decks}
         renderItem={({ item }) => (
           <Deck
-            deckTitle={item.title}
-            quantityCards={item.quantityCards}
-            navigation={navigation}
+            deckTitle={item.titleDeck}
+            quantityCards={item.cards.length}
+            onPress={() =>
+              navigation.navigate('Card', {
+                title: item.titleDeck,
+                cards: item.cards
+              })
+            }
           />
         )}
         keyExtractor={item => item.id.toString()}
@@ -30,7 +36,7 @@ function Decks({ navigation, decks }) {
 }
 
 export const DeckScreen = ({ navigation }) => {
-  const [decks, setDecks] = useState(ListDecks)
+  const [decks, setDecks] = useState(ModelDecks)
 
   function addDeck(newDeck) {
     setDecks(prevDecks => [...prevDecks, newDeck])
@@ -39,7 +45,7 @@ export const DeckScreen = ({ navigation }) => {
     <SafeAreaView style={styles.containerDeckScreen}>
       <StatusBar style="auto" />
       <HeaderCard name={'Decks'} />
-      <Decks navigation={navigation} decks={decks} />
+      <Decks decks={decks} navigation={navigation} />
       <IconButton
         icon={'plus'}
         size={30}
