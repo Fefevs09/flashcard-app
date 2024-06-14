@@ -17,6 +17,17 @@ const IconButton = ({ icon, onPress, size = 20 }) => {
   )
 }
 
+const ExitModalButton = ({ onPress, style }) => {
+  return (
+    <TouchableOpacity
+      style={(styles.exitModalButton, { style })}
+      onPress={onPress}
+    >
+      <Feather name="x" size={30} color={'#2E82DB'} />
+    </TouchableOpacity>
+  )
+}
+
 const AnswerButton = ({ answer, showAnswer, onPress }) => {
   return (
     <TouchableOpacity style={styles.answerCard} onPress={onPress}>
@@ -33,7 +44,7 @@ const AnswerButton = ({ answer, showAnswer, onPress }) => {
   )
 }
 
-export { TextButton, IconButton, AnswerButton }
+export { TextButton, IconButton, AnswerButton, ExitModalButton }
 
 const styles = StyleSheet.create({
   button: {
