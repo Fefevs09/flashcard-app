@@ -15,7 +15,11 @@ export const CardScreen = ({ navigation, route }) => {
       />
       <TextButton
         title={'Iniciar Revisão'}
-        onPress={() => navigation.navigate('Review')}
+        onPress={() =>
+          navigation.navigate('Review', {
+            cards: cards
+          })
+        }
       />
     </SafeAreaView>
   )

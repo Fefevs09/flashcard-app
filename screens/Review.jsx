@@ -1,13 +1,14 @@
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
+import { SafeAreaView, StyleSheet } from 'react-native'
 import { ReviewCard } from '../components/Question'
 import { Feed } from '../components/Feed'
 import { useState } from 'react'
 import { TextButton } from '../components/Button'
 import { ListCard } from '../model/ListCard'
 
-export const ReviewScreen = ({ navigation }) => {
+export const ReviewScreen = ({ navigation, route }) => {
+  const { cards } = route.params
   const [index, setIndex] = useState(0)
-  const [card, setCard] = useState(ListCard[0])
+  const [card, setCard] = useState(cards[0])
   const [question, setQuestion] = useState(card.question)
   const [answer, setAnswer] = useState(card.answer)
   const [showAnswer, setShowAnswer] = useState(false)
@@ -23,7 +24,6 @@ export const ReviewScreen = ({ navigation }) => {
       setAnswer(newCard.answer)
       setShowAnswer(false) // Reset showAnswer for new question
     } else {
-      // Handle the end of the list scenario, e.g., reset or show a message
       console.log('No more questions available.')
       setFinishDeck(true)
     }
