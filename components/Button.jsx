@@ -44,7 +44,15 @@ const AnswerButton = ({ answer, showAnswer, onPress }) => {
   )
 }
 
-export { TextButton, IconButton, AnswerButton, ExitModalButton }
+const AddButton = ({ onPress }) => {
+  return (
+    <TouchableOpacity style={styles.roundedButton} onPress={onPress}>
+      <Feather name="plus" size={25} color={'#2E82DB'} />
+    </TouchableOpacity>
+  )
+}
+
+export { TextButton, IconButton, AnswerButton, ExitModalButton, AddButton }
 
 const styles = StyleSheet.create({
   button: {
@@ -73,5 +81,15 @@ const styles = StyleSheet.create({
     fontWeight: 'regular',
     marginTop: 20,
     fontWeight: 'bold'
+  },
+  roundedButton: {
+    height: 50,
+    width: 50,
+    marginVertical: 15,
+    backgroundColor: '#fff',
+    borderRadius: 50,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })

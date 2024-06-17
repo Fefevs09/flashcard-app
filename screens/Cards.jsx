@@ -1,7 +1,6 @@
-import { FlatList, SafeAreaView, StyleSheet } from 'react-native'
+import { FlatList, SafeAreaView, StyleSheet, Button } from 'react-native'
 import { Card } from '../components/Card'
-import { TextButton } from '../components/Button'
-import { ListCard } from '../model/ListCard'
+import { AddButton, TextButton } from '../components/Button'
 
 export const CardScreen = ({ navigation, route }) => {
   const { cards, title } = route.params
@@ -21,6 +20,8 @@ export const CardScreen = ({ navigation, route }) => {
           })
         }
       />
+
+      <AddButton onPress={() => navigation.navigate('Create Card')} />
     </SafeAreaView>
   )
 }
