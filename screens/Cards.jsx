@@ -14,14 +14,12 @@ export const CardScreen = ({ navigation, route }) => {
       />
       <TextButton
         title={'Iniciar Revisão'}
-        onPress={() =>
-          navigation.navigate('Review', {
-            cards: cards
-          })
-        }
+        onPress={() => navigation.navigate('Review', { cards })}
       />
 
-      <AddButton onPress={() => navigation.navigate('Create Card')} />
+      <AddButton
+        onPress={() => navigation.navigate('Create Card', { cards })}
+      />
     </SafeAreaView>
   )
 }
