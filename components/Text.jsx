@@ -8,7 +8,7 @@ export { HeaderTextBlue }
 
 const styles = StyleSheet.create({
   textBlue: {
-    fontSize: '20',
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#2E82DB'
   }
