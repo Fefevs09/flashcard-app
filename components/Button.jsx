@@ -67,7 +67,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#2E82DB',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 16
   },
   answerCard: {
     marginVertical: 10,
