@@ -11,6 +11,7 @@ import {
 import { ListDecks } from '../model/ListDeck'
 import { useState } from 'react'
 import { ExitModalButton } from '../components/Button'
+import { TextInputCard } from '../components/Input'
 
 const ModalButton = ({ onPress }) => {
   return (
@@ -64,7 +65,7 @@ export const ModalScreen = ({ navigation, route }) => {
         />
         <View style={styles.card}>
           <Text style={styles.title}>Novo Decks</Text>
-          <TextInput
+          <TextInputCard
             style={styles.input}
             onChangeText={setText}
             placeholder="Nome do Deck"
