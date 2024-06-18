@@ -59,6 +59,18 @@ const MyStack = () => {
           }}
         />
 
+        <Stack.Screen
+          name="Edit Card"
+          component={CreateCardScreen}
+          options={{
+            title: 'Editar Card',
+            headerStyle: { backgroundColor: '#0D243D' },
+            headerTitleStyle: { fontWeight: 'bold', fontSize: 24 },
+            headerBackTitleVisible: false,
+            headerTintColor: '#fff'
+          }}
+        />
+
         <Stack.Group screenOptions={{ presentation: 'modal' }}>
           <Stack.Screen
             name="Modal"
