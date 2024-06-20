@@ -8,11 +8,10 @@ import {
 } from 'react-native'
 import Deck from '../components/Deck'
 import { HeaderCard } from '../components/Header.jsx'
-import { ListDecks } from '../model/ListDeck.js'
 import { IconButton } from '../components/Button.jsx'
 import { ModelDecks } from '../model/Deck.js'
 
-function Decks({ navigation, decks }) {
+function Decks({ navigation, decks, updateCard }) {
   return (
     <View style={styles.container}>
       <FlatList
@@ -24,7 +23,8 @@ function Decks({ navigation, decks }) {
             onPress={() =>
               navigation.navigate('Card', {
                 title: item.titleDeck,
-                cards: item.cards
+                cards: item.cards,
+                updateCard
               })
             }
           />
@@ -41,11 +41,28 @@ export const DeckScreen = ({ navigation }) => {
   function addDeck(newDeck) {
     setDecks(prevDecks => [...prevDecks, newDeck])
   }
+
+  function updateCard(updatedCard) {
+    setDecks(prevDecks =>
+      prevDecks.map(deck => {
+        if (deck.cards.some(card => card.id === updatedCard.id)) {
+          return {
+            ...deck,
+            cards: deck.cards.map(card =>
+              card.id === updatedCard.id ? updatedCard : card
+            )
+          }
+        }
+        return deck
+      })
+    )
+  }
+
   return (
     <SafeAreaView style={styles.containerDeckScreen}>
       <StatusBar style="auto" />
       <HeaderCard name={'Decks'} />
-      <Decks decks={decks} navigation={navigation} />
+      <Decks decks={decks} navigation={navigation} updateCard={updateCard} />
       <IconButton
         icon={'plus'}
         size={30}
@@ -61,7 +78,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     gap: 20
   },
-
   containerDeckScreen: {
     flex: 1,
     backgroundColor: '#0D243D',

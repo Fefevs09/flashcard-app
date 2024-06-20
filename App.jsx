@@ -4,9 +4,9 @@ import { NavigationContainer } from '@react-navigation/native'
 import { CardScreen } from './screens/Cards.jsx'
 import { ReviewScreen } from './screens/Review.jsx'
 import { ModalScreen } from './screens/Modal.jsx'
-import { Button, LogBox } from 'react-native'
+import { LogBox } from 'react-native'
 import { CreateCardScreen } from './screens/CreateCard.jsx'
-import Feather from 'react-native-vector-icons/Feather'
+import { EditCardScreen } from './screens/EditCard.jsx'
 
 LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state'
@@ -61,7 +61,7 @@ const MyStack = () => {
 
         <Stack.Screen
           name="Edit Card"
-          component={CreateCardScreen}
+          component={EditCardScreen}
           options={{
             title: 'Editar Card',
             headerStyle: { backgroundColor: '#0D243D' },
