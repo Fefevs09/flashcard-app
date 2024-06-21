@@ -7,8 +7,8 @@ import {
   StatusBar
 } from 'react-native'
 import Deck from '../components/Deck'
-import { HeaderCard } from '../components/Header.jsx'
-import { IconButton } from '../components/Button.jsx'
+import { HeaderCard } from '../components/Header.js'
+import { IconButton } from '../components/Button.js'
 import { ModelDecks } from '../model/Deck.js'
 
 function Decks({ navigation, decks, updateCard }) {
