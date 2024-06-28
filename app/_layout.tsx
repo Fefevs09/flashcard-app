@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router'
 
-function HomeLayout() {
+export default function RootLayout() {
   return (
     <Stack>
       <Stack.Screen
