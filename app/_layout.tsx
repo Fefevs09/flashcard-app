@@ -1,19 +1,10 @@
-import { Stack } from 'expo-router'
+import { Tabs } from 'expo-router'
 
-export default function RootLayout() {
+export default function TabLayout() {
   return (
-    <Stack>
-      <Stack.Screen
-        name="index"
-        options={{
-          title: 'Decks',
-          headerStyle: { backgroundColor: '#0D243D' },
-          headerTitleStyle: { fontWeight: 'bold', fontSize: 24 },
-          headerBackTitleVisible: false,
-          headerTintColor: '#fff'
-        }}
-      />
-      <Stack.Screen name="card" options={{}} />
-    </Stack>
+    <Tabs>
+      <Tabs.Screen name="decks" />
+      <Tabs.Screen name="settings" />
+    </Tabs>
   )
 }
