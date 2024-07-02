@@ -15,7 +15,7 @@ export default function CardScreen() {
   return (
     <View style={styles.container}>
       <Text>{title}</Text>
-      <Link href="../">Go to home screen</Link>
+      <Link href="/">Go to home screen</Link>
     </View>
   )
 }
