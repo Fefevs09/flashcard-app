@@ -1,11 +1,13 @@
-import { View, Text } from 'react-native'
-import { Link } from 'expo-router'
+import { View } from 'react-native'
+import MyHeader from '@components/Header'
 
 export default function SettingsScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings</Text>
-      <Link href="decks/card">Go to home screen</Link>
+    <View style={{ flex: 1, backgroundColor: '#191919' }}>
+      <MyHeader.Root>
+        <MyHeader.Icon />
+        <MyHeader.Title text="Settings" />
+      </MyHeader.Root>
     </View>
   )
 }
