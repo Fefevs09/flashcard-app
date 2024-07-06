@@ -1,25 +1,20 @@
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { View } from 'react-native'
+import MyHeader from '@components/Header/index'
 
 export default function DeckScreen() {
   return (
     <View style={styles.container}>
-      <View style={styles.box}>
-        <Text style={{ color: 'white' }}>Deck Screen</Text>
-      </View>
+      <MyHeader.Root>
+        <MyHeader.Icon />
+        <MyHeader.Title text="Decks" />
+      </MyHeader.Root>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  box: {
-    width: 200,
-    height: 200,
-    backgroundColor: 'blue'
+    flex: 1
   }
 })
