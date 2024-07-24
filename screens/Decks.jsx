@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   StatusBar
 } from 'react-native'
-import Deck from '../components/Deck'
+import Deck from '../components/Deck.js'
 import { HeaderCard } from '../components/Header.js'
 import { IconButton } from '../components/Button.js'
 import { ModelDecks } from '../model/Deck.js'
