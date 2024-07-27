@@ -2,26 +2,35 @@
   "expo": {
     "name": "flashcard-app",
     "slug": "flashcard-app",
+    "scheme": "your-app-scheme",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "experiments": {
+      "tsconfigPaths": true
+    },
     "splash": {
       "image": "./assets/ios/splash-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#0D243D"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mindrefresh.flashcardapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/android/drawable-hdpi/splash-logo.png",
         "backgroundColor": "#0D243D"
-      }
+      },
+      "package": "com.mindrefresh.flashcardapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
