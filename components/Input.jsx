@@ -1,8 +1,8 @@
-import { StyleSheet, TextInput, View } from 'react-native'
+import { StyleSheet, TextInput, View } from 'react-native';
 
 const InputBox = ({ children }) => {
-  return <View style={styles.inputBox}>{children}</View>
-}
+  return <View style={styles.inputBox}>{children}</View>;
+};
 
 const TextInputCard = ({ placeholder, onChangeText, value }) => {
   return (
@@ -12,12 +12,12 @@ const TextInputCard = ({ placeholder, onChangeText, value }) => {
       onChangeText={onChangeText}
       value={value}
     />
-  )
-}
+  );
+};
 
 const BigInputBox = ({ children }) => {
-  return <View style={styles.bigInputBox}>{children}</View>
-}
+  return <View style={styles.bigInputBox}>{children}</View>;
+};
 
 const BigTextInputCard = ({ placeholder, onChangeText, value }) => {
   return (
@@ -28,10 +28,10 @@ const BigTextInputCard = ({ placeholder, onChangeText, value }) => {
       onChangeText={onChangeText}
       value={value}
     />
-  )
-}
+  );
+};
 
-export { InputBox, TextInputCard, BigInputBox, BigTextInputCard }
+export { InputBox, TextInputCard, BigInputBox, BigTextInputCard };
 
 const styles = StyleSheet.create({
   inputBox: {
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
     margin: 12,
     paddingHorizontal: 20
   }
-})
+});

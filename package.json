@@ -6,7 +6,10 @@
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint:eslint:check": "eslint .",
+    "lint:prettier:check": "prettier --check .",
+    "lint:prettier:fix": "prettier --write ."
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
@@ -38,7 +41,8 @@
     "prettier": "^3.3.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.2",
-    "typescript-eslint": "^7.14.1"
+    "typescript-eslint": "^7.14.1",
+    "eslint-config-expo": "^7.0.0"
   },
   "private": true
 }

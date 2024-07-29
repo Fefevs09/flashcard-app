@@ -1,10 +1,10 @@
-import { Text, StyleSheet } from 'react-native'
+import { Text, StyleSheet } from 'react-native';
 
 const HeaderTextBlue = ({ text }) => {
-  return <Text style={styles.textBlue}>{text}</Text>
-}
+  return <Text style={styles.textBlue}>{text}</Text>;
+};
 
-export { HeaderTextBlue }
+export { HeaderTextBlue };
 
 const styles = StyleSheet.create({
   textBlue: {
@@ -12,4 +12,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#2E82DB'
   }
-})
+});

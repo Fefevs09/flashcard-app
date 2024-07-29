@@ -1,12 +1,12 @@
-import { View, StyleSheet } from 'react-native'
-import { ReactNode } from 'react'
+import { View, StyleSheet } from 'react-native';
+import { ReactNode } from 'react';
 
 interface HeaderRootProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export function HeaderRoot({ children }: HeaderRootProps) {
-  return <View style={styles.headerRoot}>{children}</View>
+  return <View style={styles.headerRoot}>{children}</View>;
 }
 
 const styles = StyleSheet.create({
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
     // borderBottomWidth: 1,
     // borderBottomColor: '#f0f0f0'
   }
-})
+});

@@ -1,18 +1,18 @@
-import { DeckScreen } from './screens/Decks.js'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { NavigationContainer } from '@react-navigation/native'
-import { CardScreen } from './screens/Cards.js'
-import { ReviewScreen } from './screens/Review.js'
-import { ModalScreen } from './screens/Modal.js'
-import { LogBox } from 'react-native'
-import { CreateCardScreen } from './screens/CreateCard.js'
-import { EditCardScreen } from './screens/EditCard.js'
+import { DeckScreen } from './screens/Decks.jsx';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { CardScreen } from './screens/Cards.jsx';
+import { ReviewScreen } from './screens/Review.jsx';
+import { ModalScreen } from './screens/Modal.jsx';
+import { LogBox } from 'react-native';
+import { CreateCardScreen } from './screens/CreateCard.jsx';
+import { EditCardScreen } from './screens/EditCard.jsx';
 
 LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state'
-])
+]);
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
   return (
@@ -83,9 +83,9 @@ const MyStack = () => {
         </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
-  )
-}
+  );
+};
 
 export default function App() {
-  return <MyStack />
+  return <MyStack />;
 }

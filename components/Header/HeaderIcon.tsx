@@ -1,9 +1,9 @@
-import Feather from '@expo/vector-icons/Feather'
+import Feather from '@expo/vector-icons/Feather';
 
 interface HeaderIconProps {
-  size?: number
+  size?: number;
 }
 
 export function HeaderIcon({ size = 30 }: HeaderIconProps) {
-  return <Feather name="zap" size={size} color={'#2E82DB'} />
+  return <Feather name="zap" size={size} color={'#2E82DB'} />;
 }

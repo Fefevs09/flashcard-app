@@ -1,21 +1,21 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import Feather from 'react-native-vector-icons/Feather'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
 
 const TextButton = ({ title, onPress }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.buttonText}>{title}</Text>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const IconButton = ({ icon, onPress, size = 20 }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Feather name={icon} size={size} color={'#2E82DB'} />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const ExitModalButton = ({ onPress, style }) => {
   return (
@@ -25,8 +25,8 @@ const ExitModalButton = ({ onPress, style }) => {
     >
       <Feather name="x" size={30} color={'#2E82DB'} />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const AnswerButton = ({ answer, showAnswer, onPress }) => {
   return (
@@ -41,18 +41,18 @@ const AnswerButton = ({ answer, showAnswer, onPress }) => {
       </View>
       {showAnswer && <Text style={styles.answerText}>{answer}</Text>}
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const AddButton = ({ onPress }) => {
   return (
     <TouchableOpacity style={styles.roundedButton} onPress={onPress}>
       <Feather name="plus" size={25} color={'#2E82DB'} />
     </TouchableOpacity>
-  )
-}
+  );
+};
 
-export { TextButton, IconButton, AnswerButton, ExitModalButton, AddButton }
+export { TextButton, IconButton, AnswerButton, ExitModalButton, AddButton };
 
 const styles = StyleSheet.create({
   button: {
@@ -80,8 +80,7 @@ const styles = StyleSheet.create({
   answerText: {
     color: '#000000',
     fontWeight: 'regular',
-    marginTop: 20,
-    fontWeight: 'bold'
+    marginTop: 20
   },
   roundedButton: {
     height: 50,
@@ -93,4 +92,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   }
-})
+});

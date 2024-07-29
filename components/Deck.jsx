@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function Deck({ deckTitle, quantityCards, onPress }) {
   return (
@@ -10,7 +10,7 @@ export default function Deck({ deckTitle, quantityCards, onPress }) {
         <Text style={styles.numberCards}>{quantityCards}</Text>
       </View>
     </TouchableOpacity>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#2E82DB'
   }
-})
+});
