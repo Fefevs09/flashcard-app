@@ -1,5 +1,5 @@
-import { Tabs } from 'expo-router'
-import Feather from '@expo/vector-icons/Feather'
+import { Tabs } from 'expo-router';
+import Feather from '@expo/vector-icons/Feather';
 
 export default function TabLayout() {
   return (
@@ -30,5 +30,5 @@ export default function TabLayout() {
       />
       <Tabs.Screen name="index" options={{ href: null }} />
     </Tabs>
-  )
+  );
 }

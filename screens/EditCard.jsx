@@ -1,22 +1,22 @@
-import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
-import { BackgroundCard } from '../components/BackgroundCard'
-import { BigTextInputCard, InputBox } from '../components/Input'
-import { HeaderTextBlue } from '../components/Text'
-import { useState } from 'react'
-import { TextInputCard, BigInputBox } from '../components/Input'
-import { TextButton } from '../components/Button'
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import { BackgroundCard } from '../components/BackgroundCard';
+import { BigTextInputCard, InputBox } from '../components/Input';
+import { HeaderTextBlue } from '../components/Text';
+import { useState } from 'react';
+import { TextInputCard, BigInputBox } from '../components/Input';
+import { TextButton } from '../components/Button';
 
 export const EditCardScreen = ({ route, navigation }) => {
-  const { item, updateCard } = route.params
-  const [question, setQuestion] = useState(item.question)
-  const [answer, setAnswer] = useState(item.answer)
+  const { item, updateCard } = route.params;
+  const [question, setQuestion] = useState(item.question);
+  const [answer, setAnswer] = useState(item.answer);
 
   const handleUpdateCard = () => {
-    const updatedCard = { id: item.id, question, answer }
-    console.log(updatedCard)
-    updateCard(updatedCard)
-    navigation.goBack()
-  }
+    const updatedCard = { id: item.id, question, answer };
+    console.log(updatedCard);
+    updateCard(updatedCard);
+    navigation.goBack();
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -41,12 +41,12 @@ export const EditCardScreen = ({ route, navigation }) => {
         <TextButton title={'Editar Card'} onPress={handleUpdateCard} />
       </ScrollView>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#0D243D'
   }
-})
+});

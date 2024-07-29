@@ -1,5 +1,5 @@
-import MyHeader from '@components/Header/index'
-import { StyleSheet, View } from 'react-native'
+import MyHeader from '@components/Header/index';
+import { StyleSheet, View } from 'react-native';
 
 export default function DeckScreen() {
   return (
@@ -8,11 +8,11 @@ export default function DeckScreen() {
         <MyHeader.Icon />
       </MyHeader.Root>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1
   }
-})
+});

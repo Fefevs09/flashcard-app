@@ -1,17 +1,15 @@
+import { useState } from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  SafeAreaView,
-  TextInput,
   KeyboardAvoidingView,
-  Platform
-} from 'react-native'
-import { ListDecks } from '../model/ListDeck'
-import { useState } from 'react'
-import { ExitModalButton } from '../components/Button'
-import { TextInputCard } from '../components/Input'
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from 'react-native';
+import { ExitModalButton } from '../components/Button';
+import { TextInputCard } from '../components/Input';
 
 const ModalButton = ({ onPress }) => {
   return (
@@ -27,30 +25,30 @@ const ModalButton = ({ onPress }) => {
         Criar Deck
       </Text>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 export const ModalScreen = ({ navigation, route }) => {
-  const [text, setText] = useState('')
-  const { addDeck, decks } = route.params
+  const [text, setText] = useState('');
+  const { addDeck, decks } = route.params;
 
   function onChangeText() {
     if (text === '') {
       // TODO: set notification to warning user to fill in tile deck field
-      navigation.goBack()
-      return
+      navigation.goBack();
+      return;
     }
 
-    const lastDeck = decks.length ? decks[decks.length - 1] : null
-    const id = lastDeck ? lastDeck.id + 1 : 1 // Start with ID 1 if no decks exist
-    let titleDeck = text
+    const lastDeck = decks.length ? decks[decks.length - 1] : null;
+    const id = lastDeck ? lastDeck.id + 1 : 1; // Start with ID 1 if no decks exist
+    let titleDeck = text;
     // let quantCard = 0
-    let cards = []
+    let cards = [];
 
-    const newDeck = { id, titleDeck, cards }
+    const newDeck = { id, titleDeck, cards };
     // ListDecks.push(newDeck)
-    addDeck(newDeck)
-    navigation.goBack()
+    addDeck(newDeck);
+    navigation.goBack();
   }
 
   return (
@@ -75,8 +73,8 @@ export const ModalScreen = ({ navigation, route }) => {
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -114,4 +112,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#2E82DB',
     borderRadius: 12
   }
-})
+});

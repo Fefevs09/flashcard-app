@@ -1,4 +1,4 @@
-import { View, TouchableOpacity, StyleSheet, Text } from 'react-native'
+import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
 
 const FeedButton = ({ titleButton, style }) => {
   return (
@@ -7,10 +7,10 @@ const FeedButton = ({ titleButton, style }) => {
         <Text style={styles.feedText}>{titleButton}</Text>
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export const Feed = ({}) => {
+export const Feed = () => {
   return (
     <View style={styles.feed}>
       <Text style={styles.feedText}>
@@ -20,8 +20,8 @@ export const Feed = ({}) => {
       <FeedButton titleButton={'Médio'} style={styles.feedButtonYellow} />
       <FeedButton titleButton={'Difícil'} style={styles.feedButtonRed} />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   feed: {
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 5
   }
-})
+});

@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   FlatList,
   StyleSheet,
   View,
   SafeAreaView,
   StatusBar
-} from 'react-native'
-import Deck from '../components/Deck.jsx'
-import { HeaderCard } from '../components/Header.js'
-import { IconButton } from '../components/Button.jsx'
-import { ModelDecks } from '../model/Deck.js'
+} from 'react-native';
+import Deck from '../components/Deck.jsx';
+import { IconButton } from '../components/Button.jsx';
+import { ModelDecks } from '../model/Deck.js';
+import HeaderCard from '../components/Header.jsx';
 
 function Decks({ navigation, decks, updateCard }) {
   return (
@@ -32,14 +32,14 @@ function Decks({ navigation, decks, updateCard }) {
         keyExtractor={item => item.id.toString()}
       />
     </View>
-  )
+  );
 }
 
 export const DeckScreen = ({ navigation }) => {
-  const [decks, setDecks] = useState(ModelDecks)
+  const [decks, setDecks] = useState(ModelDecks);
 
   function addDeck(newDeck) {
-    setDecks(prevDecks => [...prevDecks, newDeck])
+    setDecks(prevDecks => [...prevDecks, newDeck]);
   }
 
   function updateCard(updatedCard) {
@@ -51,11 +51,11 @@ export const DeckScreen = ({ navigation }) => {
             cards: deck.cards.map(card =>
               card.id === updatedCard.id ? updatedCard : card
             )
-          }
+          };
         }
-        return deck
+        return deck;
       })
-    )
+    );
   }
 
   return (
@@ -69,8 +69,8 @@ export const DeckScreen = ({ navigation }) => {
         onPress={() => navigation.navigate('Modal', { addDeck, decks })}
       />
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#0D243D',
     justifyContent: 'flex-start'
   }
-})
+});

@@ -1,11 +1,11 @@
-import { Text, TextProps, StyleSheet } from 'react-native'
+import { Text, TextProps, StyleSheet } from 'react-native';
 
 interface HeaderTextProps extends TextProps {
-  text: string
+  text: string;
 }
 
 export function HeaderText({ text }: HeaderTextProps) {
-  return <Text style={styles.headerText}>{text}</Text>
+  return <Text style={styles.headerText}>{text}</Text>;
 }
 
 const styles = StyleSheet.create({
@@ -14,4 +14,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff'
   }
-})
+});

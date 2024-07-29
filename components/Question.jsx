@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { AnswerButton } from './Button'
+import { StyleSheet, Text, View } from 'react-native';
+import { AnswerButton } from './Button';
 
 const Question = ({ questionTitle }) => {
   return (
     <View style={styles.questionBox}>
       <Text style={styles.questionTitle}>{questionTitle}</Text>
     </View>
-  )
-}
+  );
+};
 
 export const ReviewCard = ({ questionTitle, answer, showAnswer, onPress }) => {
   return (
@@ -15,8 +15,8 @@ export const ReviewCard = ({ questionTitle, answer, showAnswer, onPress }) => {
       <Question questionTitle={questionTitle} />
       <AnswerButton answer={answer} showAnswer={showAnswer} onPress={onPress} />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   reviewCard: {
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
   questionTitle: {
     fontWeight: 'bold'
   }
-})
+});

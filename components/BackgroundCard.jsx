@@ -1,8 +1,8 @@
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native';
 
 const BackgroundCard = ({ children }) => {
-  return <View style={styles.reviewCard}>{children}</View>
-}
+  return <View style={styles.reviewCard}>{children}</View>;
+};
 
 const styles = StyleSheet.create({
   reviewCard: {
@@ -17,6 +17,6 @@ const styles = StyleSheet.create({
     height: 340,
     width: 320
   }
-})
+});
 
-export { BackgroundCard }
+export { BackgroundCard };
