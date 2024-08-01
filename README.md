@@ -1,12 +1,16 @@
-# Mind Refresh (Flash Card App)
+# Mind Refresh (Flashcard App)
 
 With the aim of assisting the student community in reviewing content more interactively, I'm developing an algorithm that will aid in spaced repetition, enhancing student performance.
 
 ## Stacks
 
-Kotlin | Jetpack Compose | Hilt | Room | Retrofit | Navigation | Unit Test | MVVM
+Typescript/JavaScript | React Native | Expo | Jest
 
 ## Importance
+
+### About Flashcard
+
+Flashcards are a **versatile** and **effective** learning tool used for various purposes, including language learning, studying for exams, memorizing facts, and more. This documentation provides an overview of flashcards, their benefits, types, and best practices for creating and using them.
 
 ### Spaced Repetition
 
@@ -14,12 +18,19 @@ Spaced repetition is a learning strategy that involves systematically reviewing 
 
 ![Spaced Rep](https://github.com/Fefevs09/FlashCardAndroidApp/assets/100977797/2132a857-d81d-45ff-9a2f-81075348319e)
 
+### Benefits of Using Flashcards
+
+- Active Recall: Flashcards promote active recall, which strengthens memory and retention.
+- Spaced Repetition: They can be used in spaced repetition systems (SRS) to optimize the timing of reviews.
+- Portability: Physical flashcards are portable and easy to use anywhere, anytime.
+- Versatility: Useful for various subjects, from vocabulary to complex concepts.
+- Engagement: Flashcards make learning interactive and engaging.
+
 ## Functionalities
 
 - Deck organized
 - Revision cards
 - Notification
-- AI create cards
 
 ### Deck organized
 
@@ -34,7 +45,3 @@ The cards will appear mostly more difficult for user can finally learn that subj
 ### Notification
 
 Notification user when he has review your cards
-
-### AI create cards
-
-With AI, users can automate card creation. Users only need to say what subject they want to create, and AI will create it for them.
