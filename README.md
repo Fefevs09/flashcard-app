@@ -45,3 +45,7 @@ The cards will appear mostly more difficult for user can finally learn that subj
 ### Notification
 
 Notification user when he has review your cards
+
+## Contributing
+
+See the [contributing guide](docs/CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
