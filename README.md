@@ -2,6 +2,19 @@
 
 With the aim of assisting the student community in reviewing content more interactively, I'm developing an algorithm that will aid in spaced repetition, enhancing student performance.
 
+## Table of Content
+
+- [Stacks](#stacks)
+- [Importance](#importance)
+  - [About Flashcards](#about-flashcards)
+  - [Spaced Repetition](#spaced-repetition)
+  - [Benefits of Using Flashcards](#benefits-of-using-flashcards)
+- [Functionalities](#functionalities)
+  - [Deck Organized](#deck-organized)
+  - [Revision Cards](#revision-cards)
+  - [Notification](#notification)
+- [Contributing](#contributing)
+
 ## Stacks
 
 Typescript/JavaScript | React Native | Expo | Jest
