@@ -2,10 +2,11 @@ import { type SQLiteDatabase } from 'expo-sqlite';
 
 export async function initializeDatabase(database: SQLiteDatabase) {
   await database.execAsync(`
-  CREATE TABLE IF NOT EXISTS test (
+  PRAGMA journal_mode = WAL;
+  CREATE TABLE IF NOT EXISTS deck (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT NOT NULL,
-  quantity INTEGER NOT NULL
-    );
+  name TEXT NOT NULL
+  );
+
   `);
 }
