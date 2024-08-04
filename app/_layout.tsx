@@ -1,12 +1,11 @@
+import { initializeDatabase } from '@/infra/database';
 import Feather from '@expo/vector-icons/Feather';
 import { Tabs } from 'expo-router';
 import { SQLiteProvider } from 'expo-sqlite';
 
-import { initializeDatabase } from '@/infra/database';
-
 export default function TabLayout() {
   return (
-    <SQLiteProvider databaseName="sqlite.db" onInit={initializeDatabase}>
+    <SQLiteProvider databaseName="flashcards.db" onInit={initializeDatabase}>
       <Tabs
         screenOptions={{
           tabBarActiveTintColor: '#2E82DB'
