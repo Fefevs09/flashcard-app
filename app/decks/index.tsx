@@ -15,11 +15,15 @@ export default function DeckScreen() {
 
   useEffect(() => {
     async function setup() {
-      const result = await db.getAllSync<DeckInterface>('SELECT * FROM deck;');
+      const result = await db.getAllSync<DeckInterface>('SELECT * FROM deck');
       setDecks(result);
     }
     setup();
   });
+
+  const handleAddDeck = async () => {
+    await db.runAsync("INSERT INTO deck (id, name) VALUES (10, 'test')");
+  };
 
   return (
     <View style={styles.container}>
@@ -33,7 +37,7 @@ export default function DeckScreen() {
         renderItem={({ item }) => (
           <Deck.Root>
             <Deck.Title title={item.name} quantity={10} />
-            <Deck.Icon />
+            <Deck.Icon onPress={handleAddDeck} />
           </Deck.Root>
         )}
         keyExtractor={item => item.id.toString()}
