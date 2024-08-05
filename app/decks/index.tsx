@@ -1,20 +1,21 @@
+import Deck from '@/components/Deck';
 import Header from '@components/Header/index';
 import { useSQLiteContext } from 'expo-sqlite';
 import { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 
-interface Deck {
+interface DeckInterface {
   id: number;
   name: string;
 }
 
 export default function DeckScreen() {
   const db = useSQLiteContext();
-  const [decks, setDecks] = useState<Deck[]>([]);
+  const [decks, setDecks] = useState<DeckInterface[]>([]);
 
   useEffect(() => {
     async function setup() {
-      const result = await db.getAllSync<Deck>('SELECT * FROM deck;');
+      const result = await db.getAllSync<DeckInterface>('SELECT * FROM deck;');
       setDecks(result);
     }
     setup();
@@ -26,11 +27,14 @@ export default function DeckScreen() {
         <Header.Icon />
         <Header.Title text="Decks" />
       </Header.Root>
-      <Text style={{ color: '#fff' }}>Decks her: </Text>
+
       <FlatList
         data={decks}
         renderItem={({ item }) => (
-          <Text style={{ color: '#fff' }}>{item.name}</Text>
+          <Deck.Root>
+            <Deck.Title title={item.name} quantity={10} />
+            <Deck.Icon />
+          </Deck.Root>
         )}
         keyExtractor={item => item.id.toString()}
       />
