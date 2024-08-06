@@ -1,12 +1,32 @@
 import { type SQLiteDatabase } from 'expo-sqlite';
 
 export async function initializeDatabase(database: SQLiteDatabase) {
-  await database.execAsync(`
-  PRAGMA journal_mode = WAL;
-  CREATE TABLE IF NOT EXISTS deck (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT NOT NULL
+  const DATABASE_VERSION = 0;
+  const result = await database.getFirstAsync<{ user_version: number | any }>(
+    'PRAGMA user_version'
   );
 
-  `);
+  let currentDbVersion = DATABASE_VERSION;
+
+  if (result !== null && result.user_version !== undefined) {
+    currentDbVersion = result.user_version;
+  }
+
+  if (currentDbVersion >= DATABASE_VERSION) {
+    return; // if currentDbVersion don't change do nothing
+  }
+
+  if (currentDbVersion === 0) {
+    // struct database here
+    await database.execAsync(`
+    PRAGMA journal_mode = 'wal';
+`);
+    currentDbVersion = 0;
+  }
+  // if (currentDbVersion === 1) {
+  //   Add more migrations
+  // }
+
+  // update user version
+  await database.execAsync(`PRAGMA user_version = ${DATABASE_VERSION}`);
 }
