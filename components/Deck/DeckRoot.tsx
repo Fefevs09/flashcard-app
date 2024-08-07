@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { StyleSheet, View, ViewProps } from 'react-native';
+import { StyleSheet, TouchableOpacity, ViewProps } from 'react-native';
 
 interface DeckRootProps extends ViewProps {
   children: ReactNode;
@@ -7,9 +7,9 @@ interface DeckRootProps extends ViewProps {
 
 export function DeckRoot({ children, ...rest }: DeckRootProps) {
   return (
-    <View style={styles.deckRoot} {...rest}>
+    <TouchableOpacity style={styles.deckRoot} {...rest}>
       {children}
-    </View>
+    </TouchableOpacity>
   );
 }
 

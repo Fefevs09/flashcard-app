@@ -14,11 +14,13 @@ export default function DeckScreen() {
   const [decks, setDecks] = useState<DeckInterface[]>([]);
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async function setup() {
       const result = await db.getAllSync<DeckInterface>('SELECT * FROM deck');
       setDecks(result);
     }
-    setup();
+    // don't call setup function yet
+    // setup();
   });
 
   const handleAddDeck = async () => {
