@@ -39,10 +39,15 @@ export default function DeckScreen() {
         renderItem={({ item }) => (
           <Deck.Root>
             <Deck.Title title={item.name} quantity={10} />
-            <Deck.Icon onPress={handleAddDeck} />
+            <Deck.Icon iconName="play" />
           </Deck.Root>
         )}
         keyExtractor={item => item.id.toString()}
+      />
+      <Deck.Icon
+        iconName="plus"
+        onPress={handleAddDeck}
+        style={styles.buttonAddDeck}
       />
     </View>
   );
@@ -52,5 +57,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#191919'
+  },
+  buttonAddDeck: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+    width: 50,
+    height: 50,
+    paddingRight: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    borderWidth: 2,
+    borderColor: '#2E82DB',
+    borderRadius: 50
   }
 });
