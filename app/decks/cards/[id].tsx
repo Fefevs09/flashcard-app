@@ -1,20 +1,12 @@
-import { Link, useLocalSearchParams, useNavigation } from 'expo-router';
-import { useEffect } from 'react';
+import { Link, useLocalSearchParams } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function CardScreen() {
-  const navigation = useNavigation();
-  const { title } = useLocalSearchParams();
-
-  useEffect(() => {
-    navigation.setOptions({
-      title: title
-    });
-  });
+  const { id } = useLocalSearchParams();
 
   return (
     <View style={styles.container}>
-      <Text>{title}</Text>
+      <Text> The Id is: {id}</Text>
       <Link href="/">Go to home screen</Link>
     </View>
   );
