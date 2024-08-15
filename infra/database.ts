@@ -1,7 +1,8 @@
+import { createTables } from '@/queries/V1_create-database';
 import { type SQLiteDatabase } from 'expo-sqlite';
 
 export async function initializeDatabase(database: SQLiteDatabase) {
-  const DATABASE_VERSION = 0;
+  const DATABASE_VERSION = 1;
   const result = await database.getFirstAsync<{ user_version: number | any }>(
     'PRAGMA user_version'
   );
@@ -18,9 +19,7 @@ export async function initializeDatabase(database: SQLiteDatabase) {
 
   if (currentDbVersion === 0) {
     // struct database here
-    await database.execAsync(`
-    PRAGMA journal_mode = 'wal';
-`);
+    await database.execAsync(createTables());
     currentDbVersion = 0;
   }
   // if (currentDbVersion === 1) {
