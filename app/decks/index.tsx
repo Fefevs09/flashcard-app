@@ -1,14 +1,10 @@
 import Deck from '@/components/Deck';
+import { DeckInterface } from '@/interfaces/deckInterface';
 import Header from '@components/Header/index';
 import { Link } from 'expo-router';
 import { useSQLiteContext } from 'expo-sqlite';
 import { useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-
-interface DeckInterface {
-  id: string;
-  name: string;
-}
 
 export default function DeckScreen() {
   const db = useSQLiteContext();
@@ -40,15 +36,15 @@ export default function DeckScreen() {
             <Link
               href={{
                 pathname: '/decks/cards/[id]',
-                params: { id: item.id }
+                params: { id: item.deck_id }
               }}
             >
-              <Deck.Title title={item.name} quantity={10} />
+              <Deck.Title title={item.title} quantity={10} />
             </Link>
             <Deck.Icon iconName="play" />
           </Deck.Root>
         )}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={item => item.deck_id.toString()}
       />
       <Deck.Icon
         iconName="plus"
