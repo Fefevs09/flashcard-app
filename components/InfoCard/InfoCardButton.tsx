@@ -5,11 +5,11 @@ import {
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 
-interface DeckButtonProps extends TouchableOpacityProps {
+interface InfoCardButtonProps extends TouchableOpacityProps {
   iconName: string;
 }
 
-export function DeckIcon({ iconName, ...rest }: DeckButtonProps) {
+export function InfoCardButton({ iconName, ...rest }: InfoCardButtonProps) {
   return (
     <TouchableOpacity style={styles.buttonDeck} {...rest}>
       <Feather
