@@ -1,11 +1,11 @@
 import { Text, TextProps, StyleSheet, View } from 'react-native';
 
-interface DeckTitleProps extends TextProps {
+interface InfoCardTitlesProps extends TextProps {
   title: string;
   quantity: number;
 }
 
-export function DeckInfo({ title, quantity }: DeckTitleProps) {
+export function InfoCardTitles({ title, quantity }: InfoCardTitlesProps) {
   return (
     <View style={styles.contDeckInfo}>
       <Text style={styles.deckTitle}>{title}</Text>

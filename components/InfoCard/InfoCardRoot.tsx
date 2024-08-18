@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 
-interface DeckRootProps extends ViewProps {
+interface InfoCardRootProps extends ViewProps {
   children: ReactNode;
 }
 
-export function DeckRoot({ children, ...rest }: DeckRootProps) {
+export function InfoCardRoot({ children, ...rest }: InfoCardRootProps) {
   return (
     <View style={styles.deckRoot} {...rest}>
       {children}
