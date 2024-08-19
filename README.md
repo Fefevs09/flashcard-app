@@ -17,7 +17,7 @@ With the aim of assisting the student community in reviewing content more intera
 
 ## Stacks
 
-Typescript/JavaScript | React Native | Expo | Jest
+Typescript/JavaScript | React Native | Expo | Jest | SQLite
 
 ## Importance
 
