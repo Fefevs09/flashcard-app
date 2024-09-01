@@ -1,4 +1,4 @@
-import Deck from '@/components/Deck';
+import InfoCard from '@/components/InfoCard';
 import { DeckInterface } from '@/interfaces/deckInterface';
 import Header from '@components/Header/index';
 import { Link } from 'expo-router';
@@ -32,21 +32,21 @@ export default function DeckScreen() {
       <FlatList
         data={decks}
         renderItem={({ item }) => (
-          <Deck.Root>
+          <InfoCard.Root>
             <Link
               href={{
                 pathname: '/decks/cards/[id]',
                 params: { id: item.deck_id }
               }}
             >
-              <Deck.Title title={item.title} quantity={10} />
+              <InfoCard.Title title={item.title} quantity={10} />
             </Link>
-            <Deck.Icon iconName="play" />
-          </Deck.Root>
+            <InfoCard.Icon iconName="play" />
+          </InfoCard.Root>
         )}
         keyExtractor={item => item.deck_id.toString()}
       />
-      <Deck.Icon
+      <InfoCard.Icon
         iconName="plus"
         onPress={handleAddDeck}
         style={styles.buttonAddDeck}
