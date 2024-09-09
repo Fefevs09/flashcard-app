@@ -6,7 +6,11 @@ interface HeaderRootProps {
 }
 
 export function HeaderRoot({ children }: HeaderRootProps) {
-  return <View style={styles.headerRoot}>{children}</View>;
+  return (
+    <View testID="header-root" style={styles.headerRoot}>
+      {children}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
